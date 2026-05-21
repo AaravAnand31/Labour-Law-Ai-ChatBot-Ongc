@@ -1,0 +1,46 @@
+ 250 310 
+78 
+Methyl cellosolve (2 -
+methoxyethanol)-skin 
+5 16 - - 
+79 Methyl isobutyl Ketone  50 205 75 300 
+80 Methyl Isocyanate-skin 0.02 0.05 - - 
+81 Naphthalene 10 50 15 75 
+82 Nickel carbonyl (as Ni) 0.05 0.35 - - 
+83 Nitric acid  2 5 4 10 
+84 Nitric Oxide 25 30 - - 
+85 Nitrobenzene-skin  1 5 - - 
+86 Nitrogen dioxide 3 6 5 10 
+87 Oil mist mineral  - 5 - 10 
+88 Ozone  0.1 0.2 0.3 0.6 
+89 Parathion-skin - 0.1 - - 
+71 
+ 
+90 Phenol-skin 5 19 a a 
+91 Phorate (Thimet)-skin - 0.05 0.2 - 
+92 
+Phosgene (Carbonyl 
+Chloride) 
+0.1 0.4 - - 
+93 Phosphine 0.3 0.4 1 1 
+94 Phosphoric acid - 1 - 3 
+95 Phosphorus (yellow) - 0.1 - - 
+96 
+Phosphorus penta - 
+chloride 
+0.1 1 - - 
+97 Phosphorus trichloride 0.2 1.5 0.5 3 
+98 Picric acid-skin - 0.1 - 0.3 
+99 Pyridine 5 15 - - 
+100 
+Silans (silicon 
+tetrahydride) 
+5 7 - - 
+101 Sodium hydroxide-C - 2 - - 
+102 
+Styrene, monomer 
+(phanylethlene) 
+50 215 100 425 
+103 Sulphur dioxide  2 5 5 10 
+104 Sulphur hexafluoride  1000 6000 - - 
+105 Sulphuric acid - 1 -

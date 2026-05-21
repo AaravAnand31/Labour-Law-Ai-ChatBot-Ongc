@@ -1,0 +1,39 @@
+ride) 
+5 7 - - 
+101 Sodium hydroxide-C - 2 - - 
+102 
+Styrene, monomer 
+(phanylethlene) 
+50 215 100 425 
+103 Sulphur dioxide  2 5 5 10 
+104 Sulphur hexafluoride  1000 6000 - - 
+105 Sulphuric acid - 1 - - 
+106 
+Tetraethyl lead (as Pb) - 
+Skin 
+- 0.1 - - 
+72 
+ 
+107 Toluene (Toluol) 100 375 150 560 
+108 O-Toluidine-skin (S.C.) 2 9 - - 
+109 Tributylphosohate 0.2 2.5 - - 
+110 Trichloroethylene 50 270 200 1080 
+111 Uranium natural (as U) - 0.2 - 0.6 
+112 Vinyl Chloride (H.C.) 5 10 - - 
+113 Welding fumes  - 5 - - 
+114 Xylene (O-m-P-isomers)  100 435 150 655 
+115 Zinc oxide d a a a 
+f (i) Fume - 5.0 - 10 
+d (ii) Dust (Total dust) - 10.00 - - 
+116 
+Zirconium compounds 
+(as Zr) 
+- 5 - 10 
+ 
+THE THIRD SCHEDULE - LIST OF NOTIFIABLE DISEASES 
+1. Lead poisoning, including poisoning by any preparation or compound of lead or their sequelae.  
+2. Lead tetra-ethyl poisoning  
+3. Phosphorus poisoning or its sequelae. 
+4. Mercury poisoning or its sequelae. 
+5. Manganese poisoning or its sequelae.  
+6. Arse

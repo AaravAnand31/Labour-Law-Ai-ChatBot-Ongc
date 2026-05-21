@@ -1,0 +1,16 @@
+
+The method for calculation of annual bonus is as follow: 
+1. Calculate the gross profit in the manner specified in- 
+a. First Schedule, in case of a banking company, or 
+b. Second Schedule, in any other case. 
+2. Calculate the Available Surplus.  
+Available Surplus = A+B, where A = Gross Profit – Depreciation admissible u/s 32 of the 
+Income tax Act - Development allowance - Direct taxes payable for the accounting year 
+(calculated as per Sec.7) – Sums specified in the Third Schedule. 
+B = Direct Taxes (cal culated as per Sec. 7) in respect of gross profits for the immediately 
+preceding accounting year – Direct Taxes in respect of such gross profits as reduced by the 
+amount of bonus, for the immediately preceding accounting year. 
+3. Calculate Allocable Surplus 
+Allocable Surplus = 60% of Available Surplus, 67% in case of foreign companies. 
+4. Make adjustment for ‘Set-on’ and ‘Set-off’. For calculating the amount of bonus in respect of 
+an accounting year, allocable surplus is comp

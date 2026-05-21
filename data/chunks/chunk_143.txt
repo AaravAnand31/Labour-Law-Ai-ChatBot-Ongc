@@ -1,0 +1,44 @@
+7 Cotton dust, raw - 0.2 - - 
+38 Cresoal, all isomers-skin 5 22 - - 
+39 Cyanides (as Cn)-skin - 5 - - 
+40 Cyanogen 10 20 - - 
+41 DDT (Dichlorodiphenyl - 1 - - 
+68 
+ 
+Trichloroethane)  
+42 Demeton-skin  0.01 0.1 - - 
+43 Diazinon-skin  - 0.1 - - 
+44 Dibutyl Phythalate - 5 - - 
+45 Dichlorous (DDVP)-skin - 1 - - 
+46 Dieldrin-skin - 0.25 - - 
+47 
+Dinitrobenzene (all 
+isomers)-skin 
+0.15 1 - - 
+48 Dinitrotoluene-skin - 1.5 - - 
+49 Diphenyl (Biphenyl) 0.2 1.5 - - 
+50 
+Endosulfan (Thiodan) - 
+skin 
+- 0.1 - - 
+51 Endrin-skin  - 0.1 - - 
+52 Ethyl acetate 400 1400 - - 
+53 Ethyl alcohol 1000 1900 - - 
+54 Ethylamin 10 18 - - 
+55 Fluorides (as F) - 2.5 - - 
+56 Fluorine  1 2 2 4 
+57 Formaldehyde (S.C.) 1.0 1.5 2 3 
+58 Formic Acid 5 9 - - 
+69 
+ 
+59 Gasoline 300 900 500 1500 
+60 Hydrazine-skin (S.C.)  0.1 0.1 - - 
+61 Hydrogen Chloride-C 5 7 a a 
+62 Hydrogen Cyanide skin-C 10 10 - - 
+63 
+Hydrogen Fluoride (as F) -
+C 
+3 2.5 - - 
+64 Hydrogen Peroxide  1 1.5 - - 
+65 Hydrogen Sulphide  10 14 15 21 
+66 Iodin

@@ -1,0 +1,14 @@
+ilds a social security system for the unorganized workers. It does the following: 
+1. It redefines worker so as to include all types of workers, not only those who have a fixed 
+employer. In so doing, it brings in all the self employed workers as well as casual, contract, 
+home based etc. 
+2. It identifies each worker and gives him/her a unique social security number and social 
+security card. 
+3. It offers a variety of social security benefits to the unorg anized worker. These would 
+include health insurance, maternity benefit and pensions. As these schemes become 
+successful, the trust and participation of workers’ builds up, and more funds come in, a 
+variety of different benefits can be included such as chil dren’s education, housing, skill 
+building etc. 
+4. It binds the Central Government to providing a minimum amount of benefits and funds.  
+5. It creates a structure, an architecture that works with but does not rely solely on the 
+Government system. It creates  a participatory 
