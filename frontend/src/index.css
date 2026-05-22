@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root[data-theme="light"] {
+  color-scheme: light;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -31,6 +37,16 @@ body {
     radial-gradient(circle at top left, rgba(45, 212, 191, 0.12), transparent 32rem),
     radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.08), transparent 30rem),
     #080b12;
+  transition:
+    background 300ms ease,
+    color 300ms ease;
+}
+
+:root[data-theme="light"] body {
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.16), transparent 32rem),
+    radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.12), transparent 30rem),
+    #f1f5f9;
 }
 
 button,
