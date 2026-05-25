@@ -78,46 +78,52 @@ function getThemeClasses(theme) {
 
   return {
     app: isDark
-      ? 'bg-slate-950 text-slate-100'
-      : 'bg-slate-100 text-slate-950',
+      ? 'premium-shell bg-[#0e131a] text-[#f4f7fb]'
+      : 'premium-shell bg-[#f8f5ef] text-[#172033]',
     sidebar: isDark
-      ? 'border-slate-800 bg-slate-950/85'
-      : 'border-slate-200 bg-white/90',
+      ? 'border-[#d8e7f6]/10 bg-[#111821]/82 shadow-2xl shadow-black/28'
+      : 'border-[#d9d3c7]/75 bg-[#fffaf2]/80 shadow-2xl shadow-[#d6cbb8]/35',
     panel: isDark
-      ? 'border-slate-800 bg-slate-900/70'
-      : 'border-slate-200 bg-white/85',
+      ? 'border-[#d8e7f6]/10 bg-[#f6fbff]/[0.055] shadow-lg shadow-black/16'
+      : 'border-[#ded7ca]/75 bg-[#fffdf8]/78 shadow-lg shadow-[#ddd2c2]/35',
     mutedPanel: isDark
-      ? 'border-slate-800 bg-slate-900/50'
-      : 'border-slate-200 bg-white/70',
-    text: isDark ? 'text-white' : 'text-slate-950',
-    muted: isDark ? 'text-slate-400' : 'text-slate-500',
-    subtle: isDark ? 'text-slate-500' : 'text-slate-400',
-    border: isDark ? 'border-slate-800' : 'border-slate-200',
+      ? 'border-[#d8e7f6]/10 bg-[#f6fbff]/[0.04] shadow-lg shadow-black/10'
+      : 'border-[#ded7ca]/70 bg-[#fffaf2]/68 shadow-lg shadow-[#ddd2c2]/28',
+    text: isDark ? 'text-[#f6f8fb]' : 'text-[#172033]',
+    muted: isDark ? 'text-[#a8b4c4]' : 'text-[#667085]',
+    subtle: isDark ? 'text-[#788596]' : 'text-[#8a8174]',
+    border: isDark ? 'border-[#d8e7f6]/10' : 'border-[#ded7ca]/75',
     icon: isDark
-      ? 'border-slate-700 bg-slate-900/80 text-teal-200'
-      : 'border-slate-200 bg-white text-teal-700',
+      ? 'border-[#d8e7f6]/10 bg-[#f6fbff]/[0.06] text-[#a8d8e8] shadow-lg shadow-black/22'
+      : 'border-[#ded7ca]/80 bg-[#fffdf8] text-[#326b7a] shadow-md shadow-[#d6cbb8]/45',
     header: isDark
-      ? 'border-slate-800 bg-slate-950/75'
-      : 'border-slate-200 bg-white/75',
+      ? 'border-[#d8e7f6]/10 bg-[#0e131a]/72 shadow-sm shadow-black/22'
+      : 'border-[#ded7ca]/70 bg-[#fffaf2]/70 shadow-sm shadow-[#d6cbb8]/35',
     assistant: isDark
-      ? 'border-slate-800 bg-slate-900/85 text-slate-100'
-      : 'border-slate-200 bg-white text-slate-800',
+      ? 'border-[#d8e7f6]/10 bg-[#151d27]/88 text-[#eef3f8] shadow-xl shadow-black/20'
+      : 'border-[#ded7ca]/78 bg-[#fffdf8]/94 text-[#273244] shadow-xl shadow-[#d8cdbc]/38',
     prompt: isDark
-      ? 'border-slate-800 bg-slate-900/60 text-slate-300 hover:bg-slate-900'
-      : 'border-slate-200 bg-white/80 text-slate-700 hover:bg-white',
+      ? 'border-[#d8e7f6]/10 bg-[#f6fbff]/[0.045] text-[#c2cbd6] hover:bg-[#dff7ff]/[0.075]'
+      : 'border-[#ded7ca]/75 bg-[#fffaf2]/76 text-[#4b5565] hover:bg-[#fffdf8]',
     input: isDark
-      ? 'border-slate-700 bg-slate-900 text-slate-100 placeholder:text-slate-500'
-      : 'border-slate-200 bg-white text-slate-900 placeholder:text-slate-400',
+      ? 'border-[#d8e7f6]/12 bg-[#151d27]/88 text-[#f4f7fb] placeholder:text-[#748294] shadow-2xl shadow-black/28'
+      : 'border-[#ded7ca]/90 bg-[#fffdf8]/92 text-[#172033] placeholder:text-[#9b9287] shadow-2xl shadow-[#d6cbb8]/38',
     composer: isDark
-      ? 'border-slate-800 bg-slate-950/85'
-      : 'border-slate-200 bg-slate-50/90',
+      ? 'border-[#d8e7f6]/10 bg-[#0e131a]/38'
+      : 'border-[#ded7ca]/70 bg-[#f8f5ef]/48',
+    modal: isDark
+      ? 'border-[#d8e7f6]/12 bg-[#121a24] text-[#f4f7fb] shadow-2xl shadow-black/48'
+      : 'border-[#ded7ca]/90 bg-[#fffdf8] text-[#172033] shadow-2xl shadow-[#9f927e]/24',
+    modalBody: isDark
+      ? 'border-[#d8e7f6]/10 bg-black/18 text-[#dbe5ee]'
+      : 'border-[#ded7ca]/80 bg-[#f7f1e8]/78 text-[#3f4858]',
   };
 }
 
 function Icon({ children, themeClasses }) {
   return (
     <span
-      className={`grid h-9 w-9 shrink-0 place-items-center rounded-lg border text-sm transition-colors duration-300 ${themeClasses.icon}`}
+      className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl border text-sm font-semibold transition-all duration-300 ${themeClasses.icon}`}
     >
       {children}
     </span>
@@ -127,7 +133,7 @@ function Icon({ children, themeClasses }) {
 function BrandLogo({ themeClasses }) {
   return (
     <span
-      className={`grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-lg border bg-white p-1 shadow-sm transition-colors duration-300 ${themeClasses.icon}`}
+      className={`grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-xl border bg-white p-1 shadow-sm transition-all duration-300 ${themeClasses.icon}`}
     >
       <img
         alt="Labor Law Agent logo"
@@ -144,7 +150,7 @@ function ThemeToggle({ theme, onToggle, themeClasses }) {
   return (
     <button
       aria-label="Toggle theme"
-      className={`grid h-10 w-10 place-items-center rounded-lg border text-lg shadow-sm transition-all duration-300 hover:border-teal-400/60 ${themeClasses.panel}`}
+      className={`grid h-10 w-10 place-items-center rounded-xl border text-lg shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#93c5d6]/60 ${themeClasses.panel}`}
       onClick={onToggle}
       type="button"
       title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -163,13 +169,13 @@ function Sidebar({
 }) {
   return (
     <aside
-      className={`hidden h-screen w-80 shrink-0 border-r p-4 backdrop-blur transition-colors duration-300 xl:block ${themeClasses.sidebar}`}
+      className={`hidden h-screen w-80 shrink-0 border-r p-5 backdrop-blur-xl transition-colors duration-300 xl:block ${themeClasses.sidebar}`}
     >
       <div className="flex h-full flex-col">
-        <div className="mb-6 flex items-center gap-3">
+        <div className="mb-7 flex items-center gap-3">
           <BrandLogo themeClasses={themeClasses} />
           <div>
-            <p className={`text-sm font-semibold ${themeClasses.text}`}>
+            <p className={`text-sm font-semibold tracking-tight ${themeClasses.text}`}>
               Labour Law AI
             </p>
             <p className={`text-xs ${themeClasses.muted}`}>Research assistant</p>
@@ -177,7 +183,7 @@ function Sidebar({
         </div>
 
         <button
-          className="mb-5 flex w-full items-center justify-center rounded-lg bg-teal-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-teal-950/20 transition hover:bg-teal-300"
+          className="mb-6 flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#b7d8df] via-[#c7d9e8] to-[#d9d0bd] px-4 py-3 text-sm font-semibold text-[#16212f] shadow-xl shadow-[#06121a]/20 transition-all duration-300 hover:-translate-y-0.5 hover:from-[#c7e3e8] hover:via-[#d3e3ee] hover:to-[#e4d8c6]"
           onClick={onNewConversation}
           type="button"
         >
@@ -186,7 +192,7 @@ function Sidebar({
 
         <div className="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1 thin-scrollbar">
           <p
-            className={`px-2 text-xs font-medium uppercase tracking-[0.2em] ${themeClasses.subtle}`}
+            className={`px-2 pb-1 text-xs font-medium uppercase tracking-[0.22em] ${themeClasses.subtle}`}
           >
             Previous chats
           </p>
@@ -194,10 +200,10 @@ function Sidebar({
             const isActive = item.id === activeId;
             return (
               <button
-                className={`w-full rounded-lg border px-3 py-3 text-left transition-colors duration-300 ${
+                className={`w-full rounded-xl border px-3.5 py-3 text-left transition-all duration-300 hover:-translate-y-0.5 ${
                   isActive
-                    ? 'border-teal-400/50 bg-teal-400/10'
-                    : `border-transparent hover:border-teal-400/30 ${themeClasses.prompt}`
+                    ? 'border-[#9fc9d6]/45 bg-gradient-to-r from-[#b7d8df]/16 to-[#d9d0bd]/10 shadow-lg shadow-[#06121a]/10'
+                    : `border-transparent hover:border-[#93c5d6]/30 ${themeClasses.prompt}`
                 }`}
                 key={item.id}
                 onClick={() => onSelectConversation(item.id)}
@@ -214,7 +220,7 @@ function Sidebar({
           })}
         </div>
 
-        <div className={`mt-4 rounded-lg border p-4 ${themeClasses.panel}`}>
+        <div className={`mt-5 rounded-2xl border p-4 backdrop-blur-xl ${themeClasses.panel}`}>
           <p className={`text-sm font-semibold ${themeClasses.text}`}>Citation mode</p>
           <p className={`mt-2 text-xs leading-5 ${themeClasses.muted}`}>
             Answers are designed to show supporting source cards before you rely on
@@ -237,7 +243,7 @@ function Header({
 }) {
   return (
     <header
-      className={`sticky top-0 z-20 border-b px-4 py-3 backdrop-blur transition-colors duration-300 lg:px-8 ${themeClasses.header}`}
+      className={`sticky top-0 z-20 border-b px-4 py-3.5 backdrop-blur-xl transition-colors duration-300 lg:px-8 ${themeClasses.header}`}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4">
         <div className="flex min-w-0 items-center gap-3">
@@ -245,7 +251,7 @@ function Header({
             <BrandLogo themeClasses={themeClasses} />
           </div>
           <div className="min-w-0">
-            <h1 className={`truncate text-base font-semibold sm:text-lg ${themeClasses.text}`}>
+            <h1 className={`truncate text-base font-semibold tracking-tight sm:text-lg ${themeClasses.text}`}>
               AI Labour Law Assistant
             </h1>
             <p className={`truncate text-xs ${themeClasses.muted}`}>
@@ -256,7 +262,7 @@ function Header({
 
         <div className="flex items-center gap-2">
           <select
-            className={`hidden max-w-56 rounded-lg border px-3 py-2 text-xs outline-none transition-colors duration-300 sm:block xl:hidden ${themeClasses.input}`}
+            className={`hidden max-w-56 rounded-xl border px-3 py-2 text-xs outline-none transition-all duration-300 sm:block xl:hidden ${themeClasses.input}`}
             onChange={(event) => onSelectConversation(event.target.value)}
             value={activeConversation.id}
           >
@@ -267,14 +273,14 @@ function Header({
             ))}
           </select>
           <button
-            className="hidden rounded-lg border border-teal-400/40 px-3 py-2 text-xs font-semibold text-teal-500 transition hover:bg-teal-400/10 sm:block xl:hidden"
+            className="hidden rounded-xl border border-[#93c5d6]/45 px-3 py-2 text-xs font-semibold text-[#4c8a9a] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#93c5d6]/10 sm:block xl:hidden"
             onClick={onNewConversation}
             type="button"
           >
             New
           </button>
-          <div className="hidden items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1.5 text-xs font-medium text-emerald-500 sm:flex">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />
+          <div className="hidden items-center gap-2 rounded-full border border-[#8db7a6]/24 bg-[#8db7a6]/10 px-3 py-1.5 text-xs font-medium text-[#6fa08e] shadow-sm sm:flex">
+            <span className="h-2 w-2 rounded-full bg-[#8db7a6] shadow-[0_0_12px_rgba(141,183,166,0.72)]" />
             Ready
           </div>
           <ThemeToggle
@@ -288,27 +294,51 @@ function Header({
   );
 }
 
-function SourceCards({ sources, themeClasses }) {
+function getSourceTitle(source) {
+  return source?.file || source?.title || 'Labour law source';
+}
+
+function getSourcePreview(source) {
+  if (source?.preview) return source.preview;
+  if (source?.text) return `${source.text.slice(0, 140)}${source.text.length > 140 ? '...' : ''}`;
+  return source?.detail || 'Retrieved from labour law knowledge base';
+}
+
+function getSourceText(source) {
+  return source?.text || source?.detail || 'No source text was provided for this citation.';
+}
+
+function SourceCards({ onViewSource, sources, themeClasses }) {
   if (!sources?.length) return null;
 
   return (
-    <div className="mt-4 grid gap-3 sm:grid-cols-2">
+    <div className="mt-5 grid gap-3 sm:grid-cols-2">
       {sources.map((source, index) => (
         <article
-          className={`rounded-lg border p-3 shadow-sm transition-colors duration-300 ${themeClasses.mutedPanel}`}
-          key={`${source.title}-${index}`}
+          className={`rounded-xl border p-3.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#93c5d6]/42 hover:shadow-xl ${themeClasses.mutedPanel}`}
+          key={index}
         >
           <div className="flex items-start justify-between gap-3">
-            <h3 className={`text-sm font-semibold ${themeClasses.text}`}>
-              {source.title}
+            <h3 className={`line-clamp-2 text-sm font-semibold leading-5 ${themeClasses.text}`}>
+              {getSourceTitle(source)}
             </h3>
-            <span className="rounded-full bg-amber-300/15 px-2 py-1 text-xs font-semibold text-amber-500">
-              {source.score}
+
+            <span className="rounded-full bg-[#d6b98c]/16 px-2 py-1 text-[11px] font-semibold text-[#b58a4b]">
+              {source?.score || 'Relevant'}
             </span>
           </div>
-          <p className={`mt-2 text-xs leading-5 ${themeClasses.muted}`}>
-            {source.detail}
+
+          <p className={`mt-2 line-clamp-3 text-xs leading-5 ${themeClasses.muted}`}>
+            {getSourcePreview(source)}
           </p>
+
+          <button
+            className="mt-3 rounded-lg px-0 py-1 text-xs font-semibold text-[#4c8a9a] transition-all duration-300 hover:translate-x-0.5 hover:text-[#7bb5c5]"
+            onClick={() => onViewSource(source)}
+            type="button"
+          >
+            View Source
+          </button>
         </article>
       ))}
     </div>
@@ -324,35 +354,35 @@ function MarkdownContent({ content, isUser, themeClasses }) {
     <ReactMarkdown
       components={{
         h1: ({ children }) => (
-          <h1 className={`mb-3 mt-1 text-xl font-semibold ${themeClasses.text}`}>
+          <h1 className={`mb-4 mt-1 text-2xl font-semibold tracking-tight ${themeClasses.text}`}>
             {children}
           </h1>
         ),
         h2: ({ children }) => (
-          <h2 className={`mb-2 mt-4 text-lg font-semibold ${themeClasses.text}`}>
+          <h2 className={`mb-2 mt-5 text-xl font-semibold tracking-tight ${themeClasses.text}`}>
             {children}
           </h2>
         ),
         h3: ({ children }) => (
-          <h3 className={`mb-2 mt-3 text-base font-semibold ${themeClasses.text}`}>
+          <h3 className={`mb-2 mt-4 text-base font-semibold tracking-tight ${themeClasses.text}`}>
             {children}
           </h3>
         ),
-        p: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
+        p: ({ children }) => <p className="mb-3.5 last:mb-0">{children}</p>,
         strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
         ul: ({ children }) => (
-          <ul className="mb-3 list-disc space-y-1 pl-5">{children}</ul>
+          <ul className="mb-3.5 list-disc space-y-1.5 pl-5">{children}</ul>
         ),
         ol: ({ children }) => (
-          <ol className="mb-3 list-decimal space-y-1 pl-5">{children}</ol>
+          <ol className="mb-3.5 list-decimal space-y-1.5 pl-5">{children}</ol>
         ),
         code: ({ children }) => (
-          <code className="rounded bg-slate-950/80 px-1.5 py-0.5 text-[0.85em] text-teal-200">
+          <code className="rounded-md border border-[#d8e7f6]/10 bg-[#0b1117]/80 px-1.5 py-0.5 text-[0.85em] text-[#b7d8df]">
             {children}
           </code>
         ),
         pre: ({ children }) => (
-          <pre className="mb-3 overflow-x-auto rounded-lg border border-slate-700 bg-slate-950 p-3 text-xs text-slate-100">
+          <pre className="mb-4 overflow-x-auto rounded-xl border border-white/10 bg-slate-950/95 p-4 text-xs text-slate-100 shadow-inner">
             {children}
           </pre>
         ),
@@ -363,16 +393,20 @@ function MarkdownContent({ content, isUser, themeClasses }) {
   );
 }
 
-function Message({ message, themeClasses }) {
+function Message({ message, onViewSource, themeClasses }) {
   const isUser = message.role === 'user';
 
   return (
-    <div className={`flex gap-3 ${isUser ? 'justify-end' : 'justify-start'}`}>
+    <div
+      className={`animate-[messageIn_220ms_ease-out] flex gap-3 ${
+        isUser ? 'justify-end' : 'justify-start'
+      }`}
+    >
       {!isUser && <Icon themeClasses={themeClasses}>LL</Icon>}
       <div
-        className={`max-w-3xl rounded-xl px-4 py-3 text-sm leading-6 shadow-sm transition-colors duration-300 ${
+        className={`max-w-3xl rounded-2xl px-[18px] py-4 text-sm leading-7 shadow-sm transition-all duration-300 ${
           isUser
-            ? 'bg-teal-400 text-slate-950'
+            ? 'bg-gradient-to-br from-[#b7d8df] via-[#c7d9e8] to-[#d9d0bd] text-[#172033] shadow-xl shadow-[#06121a]/15'
             : `border ${themeClasses.assistant}`
         }`}
       >
@@ -381,7 +415,75 @@ function Message({ message, themeClasses }) {
           isUser={isUser}
           themeClasses={themeClasses}
         />
-        <SourceCards sources={message.sources} themeClasses={themeClasses} />
+        <SourceCards
+          onViewSource={onViewSource}
+          sources={message.sources}
+          themeClasses={themeClasses}
+        />
+      </div>
+    </div>
+  );
+}
+
+function SourceModal({ isOpen, onClose, source, themeClasses }) {
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      aria-modal="true"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      role="dialog"
+    >
+      <button
+        aria-label="Close source viewer"
+        className="absolute inset-0 cursor-default bg-slate-950/68 backdrop-blur-xl transition-opacity duration-300"
+        onClick={onClose}
+        type="button"
+      />
+
+      <div
+        className={`relative flex max-h-[86vh] w-full max-w-3xl animate-[sourceModalIn_180ms_ease-out] flex-col overflow-hidden rounded-3xl border shadow-2xl transition-all duration-300 ${themeClasses.modal}`}
+      >
+        <div className={`flex items-start justify-between gap-4 border-b p-[22px] ${themeClasses.border}`}>
+          <div className="min-w-0">
+            <p className={`text-xs font-medium uppercase tracking-[0.18em] ${themeClasses.subtle}`}>
+              Source citation
+            </p>
+            <h2 className={`mt-1 truncate text-lg font-semibold tracking-tight ${themeClasses.text}`}>
+              {getSourceTitle(source)}
+            </h2>
+          </div>
+
+          <button
+            className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl border text-lg leading-none transition-all duration-300 hover:-translate-y-0.5 hover:border-[#93c5d6]/60 ${themeClasses.panel}`}
+            onClick={onClose}
+            type="button"
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </div>
+
+        <div className="p-[22px]">
+          <div
+            className={`thin-scrollbar max-h-[58vh] overflow-y-auto whitespace-pre-wrap rounded-2xl border p-4 text-sm leading-7 shadow-inner ${themeClasses.modalBody}`}
+          >
+            {getSourceText(source)}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -389,15 +491,15 @@ function Message({ message, themeClasses }) {
 
 function LoadingMessage({ themeClasses }) {
   return (
-    <div className="flex gap-3">
+    <div className="animate-[messageIn_220ms_ease-out] flex gap-3">
       <Icon themeClasses={themeClasses}>LL</Icon>
       <div
-        className={`rounded-xl border px-4 py-4 shadow-sm transition-colors duration-300 ${themeClasses.assistant}`}
+        className={`rounded-2xl border px-4 py-4 shadow-sm transition-all duration-300 ${themeClasses.assistant}`}
       >
         <div className="flex items-center gap-2">
-          <span className="h-2 w-2 animate-bounce rounded-full bg-teal-300 [animation-delay:-0.2s]" />
-          <span className="h-2 w-2 animate-bounce rounded-full bg-sky-300 [animation-delay:-0.1s]" />
-          <span className="h-2 w-2 animate-bounce rounded-full bg-amber-300" />
+          <span className="h-2 w-2 animate-bounce rounded-full bg-[#b7d8df] shadow-[0_0_12px_rgba(183,216,223,0.65)] [animation-delay:-0.2s]" />
+          <span className="h-2 w-2 animate-bounce rounded-full bg-[#c7d9e8] shadow-[0_0_12px_rgba(199,217,232,0.58)] [animation-delay:-0.1s]" />
+          <span className="h-2 w-2 animate-bounce rounded-full bg-[#d6b98c] shadow-[0_0_12px_rgba(214,185,140,0.5)]" />
           <span className={`ml-2 animate-pulse text-xs ${themeClasses.muted}`}>
             Thinking...
           </span>
@@ -412,7 +514,7 @@ function PromptRail({ onPrompt, themeClasses }) {
     <div className="grid gap-3 md:grid-cols-3">
       {quickPrompts.map((prompt) => (
         <button
-          className={`rounded-lg border p-3 text-left text-xs leading-5 shadow-sm transition-colors duration-300 hover:border-teal-400/50 ${themeClasses.prompt}`}
+          className={`rounded-2xl border p-4 text-left text-xs leading-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#93c5d6]/50 hover:shadow-xl ${themeClasses.prompt}`}
           key={prompt}
           onClick={() => onPrompt(prompt)}
           type="button"
@@ -438,14 +540,14 @@ function Composer({ disabled, onSend, themeClasses }) {
 
   return (
     <div
-      className={`border-t px-4 py-4 backdrop-blur transition-colors duration-300 lg:px-8 ${themeClasses.composer}`}
+      className={`border-t px-4 pb-5 pt-3 backdrop-blur-xl transition-colors duration-300 lg:px-8 ${themeClasses.composer}`}
     >
       <div className="mx-auto max-w-5xl">
         <div
-          className={`rounded-xl border p-2 shadow-2xl shadow-black/10 transition-colors duration-300 focus-within:border-teal-400/70 ${themeClasses.input}`}
+          className={`rounded-3xl border p-2.5 backdrop-blur-xl transition-all duration-300 focus-within:-translate-y-0.5 focus-within:border-[#93c5d6]/70 focus-within:shadow-[#06121a]/20 ${themeClasses.input}`}
         >
           <textarea
-            className="max-h-40 min-h-14 w-full resize-none bg-transparent px-3 py-2 text-sm leading-6 outline-none"
+            className="max-h-40 min-h-14 w-full resize-none bg-transparent px-3 py-2.5 text-sm leading-6 outline-none"
             disabled={disabled}
             onChange={(event) => setValue(event.target.value)}
             onKeyDown={(event) => {
@@ -459,12 +561,12 @@ function Composer({ disabled, onSend, themeClasses }) {
             rows={2}
             value={value}
           />
-          <div className={`flex items-center justify-between gap-3 border-t px-3 pt-2 ${themeClasses.border}`}>
+          <div className={`flex items-center justify-between gap-3 border-t px-3 pt-2.5 ${themeClasses.border}`}>
             <p className={`hidden text-xs sm:block ${themeClasses.muted}`}>
               Source-backed responses. Press Enter to send.
             </p>
             <button
-              className="ml-auto rounded-lg bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-700 disabled:opacity-50"
+              className="ml-auto rounded-xl bg-gradient-to-r from-[#172033] to-[#2f4654] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-black/15 transition-all duration-300 hover:-translate-y-0.5 hover:from-[#2f4654] hover:to-[#4c7280] disabled:translate-y-0 disabled:opacity-50"
               disabled={disabled || !value.trim()}
               onClick={submit}
               type="button"
@@ -483,6 +585,7 @@ function App() {
   const [conversations, setConversations] = useState(loadConversations);
   const [activeId, setActiveId] = useState(() => loadConversations()[0].id);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedSource, setSelectedSource] = useState(null);
   const scrollRef = useRef(null);
 
   const themeClasses = useMemo(() => getThemeClasses(theme), [theme]);
@@ -570,16 +673,11 @@ function App() {
       .then((data) => {
         const sourceList = Array.isArray(data.sources) ? data.sources : [];
         const aiMessage = {
-          id: createId('assistant'),
-          role: 'assistant',
-          content: data.answer || 'No answer was returned by the backend.',
-          sources: sourceList.map((source) => ({
-            title: String(source),
-            detail: 'Retrieved from labour law knowledge base',
-            score: 'Relevant',
-          })),
-        };
-
+  id: createId('assistant'),
+  role: 'assistant',
+  content: data.answer || 'No answer was returned by the backend.',
+  sources: sourceList,
+};
         updateConversation(conversationId, (conversation) => ({
           ...conversation,
           messages: [...conversation.messages, aiMessage],
@@ -606,7 +704,7 @@ function App() {
 
   return (
     <div
-      className={`flex h-screen overflow-hidden transition-colors duration-300 ${themeClasses.app}`}
+      className={`relative isolate flex h-screen overflow-hidden transition-colors duration-300 ${themeClasses.app}`}
     >
       <Sidebar
         activeId={activeConversation.id}
@@ -628,12 +726,12 @@ function App() {
         />
 
         <section
-          className="thin-scrollbar flex-1 overflow-y-auto px-4 py-6 lg:px-8"
+          className="thin-scrollbar flex-1 overflow-y-auto px-4 py-7 lg:px-8"
           ref={scrollRef}
         >
           <div className="mx-auto max-w-5xl">
             <div
-              className={`mb-6 rounded-xl border p-4 transition-colors duration-300 ${themeClasses.mutedPanel}`}
+              className={`mb-6 rounded-3xl border p-5 backdrop-blur-xl transition-all duration-300 ${themeClasses.mutedPanel}`}
             >
               <div className="grid gap-3 md:grid-cols-3">
                 {stats.map((stat) => (
@@ -643,7 +741,7 @@ function App() {
                     >
                       {stat.label}
                     </p>
-                    <p className={`mt-1 text-sm font-semibold ${themeClasses.text}`}>
+                    <p className={`mt-1 text-sm font-semibold tracking-tight ${themeClasses.text}`}>
                       {stat.value}
                     </p>
                   </div>
@@ -653,11 +751,12 @@ function App() {
 
             <PromptRail onPrompt={handleSend} themeClasses={themeClasses} />
 
-            <div className="mt-6 space-y-5 pb-6">
+            <div className="mt-7 space-y-6 pb-6">
               {activeConversation.messages.map((message) => (
                 <Message
                   key={message.id}
                   message={message}
+                  onViewSource={setSelectedSource}
                   themeClasses={themeClasses}
                 />
               ))}
@@ -672,6 +771,13 @@ function App() {
           themeClasses={themeClasses}
         />
       </main>
+
+      <SourceModal
+        isOpen={Boolean(selectedSource)}
+        onClose={() => setSelectedSource(null)}
+        source={selectedSource}
+        themeClasses={themeClasses}
+      />
     </div>
   );
 }

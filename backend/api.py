@@ -210,8 +210,16 @@ Provide a concise legal answer.
         response = response.split(
             "assistant"
         )[-1].strip()
+        formatted_sources = []
+
+    for i, source in enumerate(retrieved_sources):
+        formatted_sources.append({
+            "file": source,
+            "preview": retrieved_chunks[i][:120],
+            "text": retrieved_chunks[i][:500]
+        })
 
     return {
         "answer": response,
-        "sources": retrieved_sources
+        "sources": formatted_sources
     }
