@@ -308,11 +308,11 @@ function getSourceText(source) {
   return source?.text || source?.detail || 'No source text was provided for this citation.';
 }
 
-function SourceCards({ onViewSource, sources, themeClasses }) {
+function SourceCards({ className = 'mt-5', onViewSource, sources, themeClasses }) {
   if (!sources?.length) return null;
 
   return (
-    <div className="mt-5 grid gap-3 sm:grid-cols-2">
+    <div className={`${className} grid gap-3 sm:grid-cols-2`}>
       {sources.map((source, index) => (
         <article
           className={`rounded-xl border p-3.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#93c5d6]/42 hover:shadow-xl ${themeClasses.mutedPanel}`}
@@ -393,8 +393,35 @@ function MarkdownContent({ content, isUser, themeClasses }) {
   );
 }
 
-function Message({ message, onViewSource, themeClasses }) {
+function SourcesButton({ count, onClick }) {
+  return (
+    <button
+      className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#93c5d6]/32 bg-[#93c5d6]/10 px-3 py-1.5 text-xs font-semibold text-[#6aa1b0] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#93c5d6]/55 hover:bg-[#93c5d6]/16 hover:text-[#7bb5c5]"
+      onClick={onClick}
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="h-3.5 w-3.5"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M8 7h8M8 11h8M8 15h5M6 3h9l3 3v15H6V3Z"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.8"
+        />
+      </svg>
+      Sources ({count})
+    </button>
+  );
+}
+
+function Message({ message, onViewSources, themeClasses }) {
   const isUser = message.role === 'user';
+  const sourceCount = message.sources?.length || 0;
 
   return (
     <div
@@ -415,11 +442,87 @@ function Message({ message, onViewSource, themeClasses }) {
           isUser={isUser}
           themeClasses={themeClasses}
         />
-        <SourceCards
-          onViewSource={onViewSource}
-          sources={message.sources}
-          themeClasses={themeClasses}
-        />
+        {!isUser && sourceCount > 0 && (
+          <SourcesButton
+            count={sourceCount}
+            onClick={() => onViewSources(message.sources)}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SourcesModal({
+  isOpen,
+  onClose,
+  onViewSource,
+  sources,
+  themeClasses,
+}) {
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      aria-modal="true"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      role="dialog"
+    >
+      <button
+        aria-label="Close sources"
+        className="absolute inset-0 cursor-default bg-slate-950/68 backdrop-blur-xl transition-opacity duration-300"
+        onClick={onClose}
+        type="button"
+      />
+
+      <div
+        className={`relative flex max-h-[88vh] w-full max-w-4xl animate-[sourceModalIn_180ms_ease-out] flex-col overflow-hidden rounded-3xl border shadow-2xl transition-all duration-300 ${themeClasses.modal}`}
+      >
+        <div className={`flex items-start justify-between gap-4 border-b p-[22px] ${themeClasses.border}`}>
+          <div className="min-w-0">
+            <p className={`text-xs font-medium uppercase tracking-[0.18em] ${themeClasses.subtle}`}>
+              Retrieved evidence
+            </p>
+            <h2 className={`mt-1 text-lg font-semibold tracking-tight ${themeClasses.text}`}>
+              Sources ({sources.length})
+            </h2>
+          </div>
+
+          <button
+            aria-label="Close"
+            className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl border text-sm font-semibold leading-none transition-all duration-300 hover:-translate-y-0.5 hover:border-[#93c5d6]/60 ${themeClasses.panel}`}
+            onClick={onClose}
+            type="button"
+          >
+            X
+          </button>
+        </div>
+
+        <div className="min-h-0 p-[22px]">
+          <div
+            className={`thin-scrollbar max-h-[64vh] overflow-y-auto rounded-2xl border p-4 ${themeClasses.modalBody}`}
+          >
+            <SourceCards
+              className=""
+              onViewSource={onViewSource}
+              sources={sources}
+              themeClasses={themeClasses}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -586,6 +689,7 @@ function App() {
   const [activeId, setActiveId] = useState(() => loadConversations()[0].id);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedSource, setSelectedSource] = useState(null);
+  const [selectedSources, setSelectedSources] = useState([]);
   const scrollRef = useRef(null);
 
   const themeClasses = useMemo(() => getThemeClasses(theme), [theme]);
@@ -756,7 +860,7 @@ function App() {
                 <Message
                   key={message.id}
                   message={message}
-                  onViewSource={setSelectedSource}
+                  onViewSources={setSelectedSources}
                   themeClasses={themeClasses}
                 />
               ))}
@@ -771,6 +875,14 @@ function App() {
           themeClasses={themeClasses}
         />
       </main>
+
+      <SourcesModal
+        isOpen={selectedSources.length > 0}
+        onClose={() => setSelectedSources([])}
+        onViewSource={setSelectedSource}
+        sources={selectedSources}
+        themeClasses={themeClasses}
+      />
 
       <SourceModal
         isOpen={Boolean(selectedSource)}
